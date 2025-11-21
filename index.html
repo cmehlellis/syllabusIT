@@ -1,0 +1,283 @@
+That's a great idea\! While I can't directly create a live, interactive webpage or a downloadable PDF file, I can certainly provide you with the **HTML**, **CSS**, and **JavaScript** code for a fully editable, blue and gold-themed syllabus webpage based on the *ITE Syllabus 25-26.pdf* content you shared.
+
+This solution will include:
+
+1.  **HTML Structure:** The content, laid out logically.
+2.  **CSS Styling:** Using a **white background** and **Blue and Gold** accents for the Santa Clara High School theme.
+3.  **JavaScript Interactivity:** Making all major sections **editable** in the browser and adding a function to trigger a **PDF download** (using the browser's print-to-PDF feature).
+
+### 💻 Interactive Syllabus Webpage Code
+
+Here is the code. You can copy and paste this into three separate files (e.g., `syllabus.html`, `style.css`, and `script.js`) to run it locally.
+
+-----
+
+### **1. HTML (`syllabus.html`)**
+
+This structure includes the editable sections and links the CSS and JavaScript files.
+
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ITE Syllabus 25-26 - Editable</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="school-header">
+            <h1 class="editable" contenteditable="true">Santa Clara High School</h1>
+            <h2 class="editable" contenteditable="true">IT Essentials: PC Hardware and Software v8.0</h2>
+        </header>
+
+        <section class="contact-info">
+            <h3 class="gold-text">Contact Information</h3>
+            <ul>
+                <li><strong class="editable" contenteditable="true">Instructor: Christina Mehl</strong></li>
+                <li>Email: <a href="mailto:cmehl@scusd.net" class="editable" contenteditable="true">cmehl@scusd.net</a></li>
+                <li>Phone: <span class="editable" contenteditable="true">408.423.2744</span></li>
+                <li>School website: <a href="https://santaclara.santaclarausd.org/" class="editable" contenteditable="true">https://santaclara.santaclarausd.org/</a></li>
+            </ul>
+        </section>
+
+        <section class="overview">
+            <h3 class="gold-text">Course Overview and Description</h3>
+            <p class="editable" contenteditable="true">This course covers the fundamentals of computer hardware, software, and advanced concepts such as security, networking, and the responsibilities of an IT professional. Students who complete this course will be able to describe the internal components of a computer, assemble a computer system, install an operating system, and troubleshoot using system tools and diagnostic software. Students will also be able to connect to the Internet and share resources in a networked environment. New topics in this version include mobile operating systems, OS X, Linux, and client-side virtualization. Expanded topics include Microsoft Windows operating systems, security, networking, and troubleshooting.</p>
+        </section>
+
+        <section class="objectives">
+            <h3 class="gold-text">Curriculum Objectives</h3>
+            <ul class="editable" contenteditable="true">
+                <li>Select the appropriate computer components to build, repair, or upgrade personal computers.</li>
+                <li>Explain how to correctly use tools and safely work in a lab.</li>
+                <li>Install components to build, repair, or upgrade personal computers.</li>
+                <li>... and more (see original syllabus content)</li>
+            </ul>
+        </section>
+
+        <section class="pathways">
+            <h3 class="gold-text">Industries and Pathways</h3>
+            <ul class="editable" contenteditable="true">
+                <li>A corporate or mobile environment... Job titles include enterprise technician, IT administrator, field service technician, and PC technician.</li>
+                <li>A remote-based work environment... Job titles include remote support technician, help desk technician or IT specialist.</li>
+                <li>Settings with limited customer interaction... Job titles include depot technician and bench technician.</li>
+            </ul>
+        </section>
+        
+        <section class="college-cert">
+            <h3 class="gold-text">Industry Certification & College Credit</h3>
+            <p class="editable" contenteditable="true">The IT Essentials curriculum prepares students for the CompTia A+ Certification test. You will be able to apply for a voucher to take the A+ for $80. If you pass with a B or better, you will receive a letter of recommendation from Cisco President. Additionally, we are articulated with Mission College, and students will earn 4 units/credit if they pass with a B or Better.</p>
+        </section>
+
+        <section class="attendance-policy">
+            <h3 class="gold-text">Attendance & Late Work Policy</h3>
+            <div class="key-to-success">
+                <h4 class="blue-text">KEY TO SUCCESS (Editable)</h4>
+                <p class="editable" contenteditable="true">Be prompt, be prepared, be productive, and be polite. Attendance is crucial for success in this class. You will only be let out of class 3 times per semester.</p>
+            </div>
+            <div class="late-work">
+                <h4 class="blue-text">LATE WORK PROCEDURES (Editable)</h4>
+                <p class="editable" contenteditable="true">Be wise with your time! You are expected to turn in all assignments when they are due. **-10%** 1-Day late; **-25%** 2 to 7 days late; **-50%** 8 or more days late.</p>
+            </div>
+        </section>
+
+        <section class="cell-phone-policy">
+            <h3 class="gold-text">Cell Phone Free School Policy</h3>
+            <p class="editable" contenteditable="true">Beginning with the 2025-26 school year, cell phones and personal electronic devices are prohibited during the school day in all SCUSD schools. All students will be provided with a Yondr pouch... (Full policy is editable here).</p>
+            <div class="consequences">
+                <h4 class="blue-text">Consequences (Editable)</h4>
+                <ul class="editable" contenteditable="true">
+                    <li>1st offense - verbal warning and re-Yondr the device</li>
+                    <li>2nd offense - device is confiscated for the rest of the day</li>
+                    <li>3rd offense - device is confiscated until the parent/guardian can pick up</li>
+                    <li>4th offense - student will not be allowed to have a cell phone on campus at all</li>
+                </ul>
+            </div>
+        </section>
+
+        <button id="downloadPdfButton" class="blue-bg">Download PDF</button>
+
+        <section class="agreement">
+            <p class="editable" contenteditable="true">If you agree to these rules and regulations, please have your parents and you e-sign below.</p>
+            <div class="signature-area">
+                <p>Student Signature: _________________________</p>
+                <p>Parent/Guardian Signature: _________________________</p>
+            </div>
+        </section>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
+```
+
+-----
+
+### **2. CSS (`style.css`)**
+
+This file handles the visual appearance, using **white** for the background and **Blue and Gold** for accents.
+
+```css
+/* Color Variables for Santa Clara High School */
+:root {
+    --blue: #003366; /* Deep Navy Blue */
+    --gold: #FFC72C; /* Bright Gold/Yellow */
+    --white: #FFFFFF;
+    --text-color: #333;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: var(--white);
+    color: var(--text-color);
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+}
+
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px;
+    border: 1px solid #ddd;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+}
+
+/* --- Header & Headings --- */
+.school-header {
+    text-align: center;
+    border-bottom: 3px solid var(--blue);
+    padding-bottom: 15px;
+    margin-bottom: 25px;
+}
+
+h1 {
+    color: var(--blue);
+    font-size: 2.2em;
+    margin: 0 0 5px 0;
+}
+
+h2 {
+    color: var(--gold);
+    font-size: 1.4em;
+    margin: 0;
+}
+
+h3 {
+    color: var(--blue);
+    border-left: 5px solid var(--gold);
+    padding-left: 10px;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h4 {
+    color: var(--blue);
+    margin-top: 20px;
+}
+
+.gold-text { color: var(--gold) !important; }
+.blue-text { color: var(--blue) !important; }
+
+/* --- Editable Content Styling --- */
+.editable {
+    /* Style to make editable areas clear but not intrusive */
+    padding: 2px 4px;
+    border-radius: 3px;
+    transition: background-color 0.2s;
+}
+
+.editable:focus {
+    outline: 2px solid var(--gold); /* Highlight when actively editing */
+    background-color: #fff9e6; /* Light yellow background when focused */
+}
+
+/* --- Lists and Links --- */
+ul, ol {
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 8px;
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--gold);
+}
+
+/* --- PDF Download Button --- */
+#downloadPdfButton {
+    display: block;
+    width: 200px;
+    margin: 30px auto 20px;
+    padding: 12px 20px;
+    background-color: var(--blue);
+    color: var(--white);
+    border: none;
+    border-radius: 5px;
+    font-size: 1em;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.1s;
+}
+
+#downloadPdfButton:hover {
+    background-color: #0056b3;
+}
+
+#downloadPdfButton:active {
+    transform: scale(0.98);
+}
+
+/* --- Print Styles for PDF Generation --- */
+@media print {
+    /* Hide the download button when printing to PDF */
+    #downloadPdfButton {
+        display: none;
+    }
+    /* Remove borders/highlights from editable areas when printing */
+    .editable:focus {
+        outline: none;
+        background-color: transparent;
+    }
+}
+```
+
+-----
+
+### **3. JavaScript (`script.js`)**
+
+This script adds the functionality to print the page to a PDF file.
+
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+    // 1. PDF Download Functionality
+    const downloadButton = document.getElementById('downloadPdfButton');
+    
+    // Add event listener to the button
+    downloadButton.addEventListener('click', () => {
+        // Use the browser's native print dialog
+        window.print();
+        
+        // Instructions for the user:
+        // When the print dialog opens, the user must select 
+        // "Save as PDF" or "Microsoft Print to PDF" as the destination.
+    });
+
+    // 2. Editable Content Indicator (Optional)
+    // This is optional since contenteditable="true" in HTML already makes it work, 
+    // but we can add a simple message to guide the user.
+    const editableElements = document.querySelectorAll('.editable');
+    if (editableElements.length > 0) {
+        console.log("All elements with class 'editable' can be clicked and modified.");
+    }
+});
+```
+
+Would you like me to help you populate one of the larger, currently condensed sections (like the **Curriculum Objectives** or **Cell Phone Policy**) with the full text from the original PDF content?
