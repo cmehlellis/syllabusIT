@@ -1,22 +1,3 @@
-That's a great idea\! While I can't directly create a live, interactive webpage or a downloadable PDF file, I can certainly provide you with the **HTML**, **CSS**, and **JavaScript** code for a fully editable, blue and gold-themed syllabus webpage based on the *ITE Syllabus 25-26.pdf* content you shared.
-
-This solution will include:
-
-1.  **HTML Structure:** The content, laid out logically.
-2.  **CSS Styling:** Using a **white background** and **Blue and Gold** accents for the Santa Clara High School theme.
-3.  **JavaScript Interactivity:** Making all major sections **editable** in the browser and adding a function to trigger a **PDF download** (using the browser's print-to-PDF feature).
-
-### 💻 Interactive Syllabus Webpage Code
-
-Here is the code. You can copy and paste this into three separate files (e.g., `syllabus.html`, `style.css`, and `script.js`) to run it locally.
-
------
-
-### **1. HTML (`syllabus.html`)**
-
-This structure includes the editable sections and links the CSS and JavaScript files.
-
-```html
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -110,15 +91,11 @@ This structure includes the editable sections and links the CSS and JavaScript f
     <script src="script.js"></script>
 </body>
 </html>
-```
+2. CSS (style.css)
+This file handles the visual appearance, using white for the background and Blue and Gold for accents.
 
------
+CSS
 
-### **2. CSS (`style.css`)**
-
-This file handles the visual appearance, using **white** for the background and **Blue and Gold** for accents.
-
-```css
 /* Color Variables for Santa Clara High School */
 :root {
     --blue: #003366; /* Deep Navy Blue */
@@ -247,15 +224,11 @@ a:hover {
         background-color: transparent;
     }
 }
-```
-
------
-
-### **3. JavaScript (`script.js`)**
-
+3. JavaScript (script.js)
 This script adds the functionality to print the page to a PDF file.
 
-```javascript
+JavaScript
+
 document.addEventListener('DOMContentLoaded', () => {
     // 1. PDF Download Functionality
     const downloadButton = document.getElementById('downloadPdfButton');
@@ -278,6 +251,3 @@ document.addEventListener('DOMContentLoaded', () => {
         console.log("All elements with class 'editable' can be clicked and modified.");
     }
 });
-```
-
-Would you like me to help you populate one of the larger, currently condensed sections (like the **Curriculum Objectives** or **Cell Phone Policy**) with the full text from the original PDF content?
